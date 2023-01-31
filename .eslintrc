@@ -1,0 +1,70 @@
+{
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "plugins": ["@typescript-eslint", "prefer-arrow"],
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "rules": {
+      "@typescript-eslint/semi": ["error"],
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/restrict-plus-operands": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { "argsIgnorePattern": "^_" }
+      ],
+      "@typescript-eslint/quotes": [
+        "error",
+        "double",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ],
+      "no-case-declarations": "off",
+      "prefer-arrow/prefer-arrow-functions": [
+        "warn",
+        {
+          "disallowPrototype": true,
+          "singleReturnOnly": false,
+          "classPropertiesAllowed": false
+        }
+      ],
+      "prefer-arrow-callback": [
+        "error",
+        { "allowNamedFunctions": true }
+      ],
+      "func-style": [
+        "error",
+        "expression",
+        { "allowArrowFunctions": true }
+      ],
+      "max-len": [
+        "error",
+        {
+          "code": 160,
+          "tabWidth": 4,
+          "ignoreComments": true, 
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }
+      ],
+      "indent": ["warn", 4],
+      "no-tabs": ["error", { "allowIndentationTabs": true }],
+      "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+      "linebreak-style": ["error", "windows"],
+      "comma-dangle": ["error", "never"],
+      "arrow-parens": ["error", "as-needed"]
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    }
+  }
